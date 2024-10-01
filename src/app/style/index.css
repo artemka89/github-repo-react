@@ -11,18 +11,16 @@
   --muted-foreground: #266963;
   --accent: #49c5b6;
   --border: #49c5b6;
+  --input: #161616;
   --radius: 0.5rem;
 }
 
 @layer base {
-  * {
-    @apply border-[var(--border)];
-  }
   body {
     @apply bg-[var(--background)] bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat text-[var(--primary)];
   }
 }
 
 #root {
-  @apply min-h-screen;
+  @apply container min-h-screen;
 }

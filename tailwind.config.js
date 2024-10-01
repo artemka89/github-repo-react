@@ -9,7 +9,18 @@ export default {
         '2xl': '1280px',
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        border: 'var(--border)',
+        input: 'var(--input)',
+        background: 'var(--background)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        muted: 'var(--muted)',
+        accent: 'var(--accent)',
+        card: 'var(--card)',
+      },
+    },
   },
   plugins: [],
 };
