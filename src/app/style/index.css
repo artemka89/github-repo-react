@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: #000;
+  --card: #49c5b6;
+  --primary: #fff;
+  --secondary: #000;
+  --muted: #49c5b783;
+  --muted-foreground: #266963;
+  --accent: #49c5b6;
+  --border: #49c5b6;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border)];
+  }
+  body {
+    @apply bg-[var(--background)] bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat text-[var(--primary)];
+  }
+}
+
+#root {
+  @apply min-h-screen;
+}
