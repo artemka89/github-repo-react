@@ -25,14 +25,16 @@ async function fetchUserData<R>(url: string, login: string): Promise<R> {
   }
 }
 
-export async function getUserData(login: string) {
+export async function getUser(login: string) {
   const userUrl = getUserUrl(login);
-  const repoUrl = getUserReposUrl(login);
-
   const user = await fetchUserData<User>(userUrl, login);
-  const repos = await fetchUserData<UserRepo[]>(repoUrl, login);
+  return user;
+}
 
-  return { user, repos };
+export async function getUserRepo(login: string) {
+  const repoUrl = getUserReposUrl(login);
+  const repos = await fetchUserData<UserRepo[]>(repoUrl, login);
+  return repos;
 }
 
 export async function getSearchingUsers(login: string, page = 1) {

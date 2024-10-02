@@ -1,5 +1,6 @@
 import { FC, useRef, useState } from 'react';
 
+import { cn } from '@/shared/libs/cn';
 import useDebounceValue from '@/shared/libs/use-debounce-value';
 import { useOutsideClick } from '@/shared/libs/use-outside-click';
 import { Input } from '@/shared/ui/input';
@@ -9,7 +10,11 @@ import { ScrollableUserList } from './components/scrollable-user-list';
 import { UserItem } from './components/user-item';
 import { useGetSearchingUsers } from './model/use-get-searching-users';
 
-export const SearchUsersInput: FC = () => {
+interface SearchUsersProps {
+  className?: string;
+}
+
+export const SearchUsersInput: FC<SearchUsersProps> = ({ className }) => {
   const [searchValue, setSearchValue] = useState('');
   const debouncesLogin = useDebounceValue(searchValue, 500);
 
@@ -47,7 +52,7 @@ export const SearchUsersInput: FC = () => {
       {isOpenPopup && (
         <div className='fixed bottom-0 left-0 right-0 top-0 bg-black/50' />
       )}
-      <div ref={ref} className='z-50` relative'>
+      <div ref={ref} className={cn(className, 'z-50` relative')}>
         <Input
           placeholder='Enter user login'
           value={searchValue}

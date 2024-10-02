@@ -19,6 +19,7 @@ export interface User {
 }
 
 export interface UserRepo {
+  id: string;
   name: string;
   html_url: string;
 }
