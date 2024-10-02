@@ -20,7 +20,7 @@ export const CardHeader: FC<CardHeaderProps> = ({ user, className }) => {
         />
       </div>
       <a href={user.html_url} target='_blank' className='block w-full'>
-        <h2 className='has-hover:underline overflow-hidden text-ellipsis whitespace-nowrap text-center text-2xl font-bold'>
+        <h2 className='overflow-hidden text-ellipsis whitespace-nowrap text-center text-2xl font-bold has-hover:hover:underline'>
           {user.login}
         </h2>
       </a>

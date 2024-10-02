@@ -14,7 +14,7 @@ export const RepoItem: FC<RepoItemProps> = ({ repo, className }) => {
     <li
       className={cn(
         className,
-        'has-hover:border-border cursor-pointer rounded-md border border-transparent bg-muted transition-colors',
+        'cursor-pointer rounded-md border border-transparent bg-muted transition-colors has-hover:hover:border-border',
       )}>
       <a
         href={repo.html_url}

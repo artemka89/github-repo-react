@@ -11,9 +11,18 @@ interface UserRepoListProps {
 }
 
 export const UserRepoList: FC<UserRepoListProps> = ({ login, className }) => {
-  const { data, isLoading } = useGetUserRepos(login);
+  const { data, isLoading, isFetched } = useGetUserRepos(login);
 
   const isScrollable = data && data.length > 5;
+
+  if (isLoading) return <>...Loading</>;
+
+  if (isFetched && data?.length === 0)
+    return (
+      <div className='flex w-full items-center justify-center text-2xl'>
+        Repositories not found
+      </div>
+    );
 
   return (
     <ul

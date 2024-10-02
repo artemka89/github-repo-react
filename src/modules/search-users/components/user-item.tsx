@@ -18,7 +18,7 @@ export const UserItem: FC<UserItemProps> = ({ user, onClick, className }) => {
       onClick={onClick.bind(null, user.login)}
       className={cn(
         className,
-        'has-hover:bg-input flex h-14 cursor-pointer items-center gap-2 bg-transparent px-2 transition-colors',
+        'flex h-14 cursor-pointer items-center gap-2 bg-transparent px-2 transition-colors has-hover:hover:bg-input',
       )}>
       <Avatar
         size={48}
