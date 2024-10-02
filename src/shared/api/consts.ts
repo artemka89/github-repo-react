@@ -1,5 +1,5 @@
 const API_URL = 'https://api.github.com';
-const USER_PER_PAGE = 20;
+export const USER_PER_PAGE = 20;
 
 export const getUserUrl = (login: string) => {
   return `${API_URL}/users/${login}`;

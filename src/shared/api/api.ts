@@ -1,10 +1,7 @@
 import { getSearchUsersUrl, getUserReposUrl, getUserUrl } from './consts';
 import { SearchingUsers, User, UserRepo } from './types';
 
-async function fetchUserData<R>(
-  url: string,
-  login: string,
-): Promise<R | undefined> {
+async function fetchUserData<R>(url: string, login: string): Promise<R> {
   try {
     if (typeof login !== 'string') {
       throw new TypeError('username must be a string');
@@ -24,6 +21,7 @@ async function fetchUserData<R>(
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log(error);
+    return [] as R;
   }
 }
 
