@@ -35,6 +35,7 @@ export const SearchUsersInput: FC<SearchUsersProps> = memo(
       ? !data.pages[0].items.length && Boolean(searchValue)
       : true;
 
+    console.log('input rendered');
     function onChangeInput(event: React.ChangeEvent<HTMLInputElement>) {
       if (!isOpenPopup) {
         setIsOpenPopup(true);
@@ -53,9 +54,9 @@ export const SearchUsersInput: FC<SearchUsersProps> = memo(
     }
 
     function onClickItem(value: string) {
-      setLogin(value);
       setIsOpenPopup(false);
       setIsFocusInput(false);
+      setLogin(value);
       setSearchValue('');
     }
 

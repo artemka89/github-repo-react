@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { cn } from '@/shared/libs/cn';
+import { useAppearanceDelay } from '@/shared/libs/use-appearance-delay';
 
 import { RepoItem } from './components/repo-item';
 import { useGetUserRepos } from './model/use-get-user-repos';
@@ -13,9 +14,18 @@ interface UserRepoListProps {
 export const UserRepoList: FC<UserRepoListProps> = ({ login, className }) => {
   const { data, isLoading, isFetched } = useGetUserRepos(login);
 
+  const isLoadingWithDelay = useAppearanceDelay(isLoading);
+
   const isScrollable = data && data.length > 5;
 
-  if (isLoading) return <>...Loading</>;
+  if (isLoadingWithDelay)
+    return (
+      <div className='w-full animate-pulse space-y-2'>
+        {[...new Array(5)].map((_, index) => (
+          <div key={index} className='h-[62px] rounded-md bg-neutral-600' />
+        ))}
+      </div>
+    );
 
   if (isFetched && data?.length === 0)
     return (

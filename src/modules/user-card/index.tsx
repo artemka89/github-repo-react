@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { cn } from '@/shared/libs/cn';
+import { useAppearanceDelay } from '@/shared/libs/use-appearance-delay';
 
 import { CardHeader } from './components/card-header';
 import { RepoInfo } from './components/repo-info';
@@ -14,7 +15,16 @@ interface UserCardProps {
 export const UserCard: FC<UserCardProps> = ({ login, className }) => {
   const { data, isLoading } = useGetUser(login);
 
-  if (isLoading) return <>...Loading</>;
+  const isLoadingWithDelay = useAppearanceDelay(isLoading);
+
+  if (isLoadingWithDelay)
+    return (
+      <div
+        className={
+          'h-[324px] w-full animate-pulse rounded-md bg-neutral-600 sm:h-[252px] md:h-[342px] md:max-w-[300px]'
+        }
+      />
+    );
 
   if (!data) return null;
 

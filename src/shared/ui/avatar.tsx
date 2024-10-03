@@ -13,7 +13,7 @@ interface AvatarProps {
 export const Avatar: FC<AvatarProps> = ({
   imageUrl,
   username,
-  size = 64,
+  size = 112,
   className,
   formatName,
 }) => {
@@ -23,7 +23,7 @@ export const Avatar: FC<AvatarProps> = ({
     <div
       className={cn(
         className,
-        { 48: 'h-12 w-12', 64: 'h-16 w-16' }[size],
+        { 48: 'size-12', 112: 'size-28' }[size],
         'flex items-center justify-center overflow-hidden rounded-full border-2 border-border bg-input text-accent',
         imageUrl,
       )}>
