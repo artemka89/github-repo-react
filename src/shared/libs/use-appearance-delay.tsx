@@ -9,7 +9,7 @@ type Options = {
 export function useAppearanceDelay(show?: boolean, options = {} as Options) {
   const {
     minDisplay = 1000,
-    defaultValue = true,
+    defaultValue = false,
     appearanceDelay = 100,
   } = options;
 

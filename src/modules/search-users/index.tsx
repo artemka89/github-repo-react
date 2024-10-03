@@ -1,4 +1,5 @@
 import { FC, memo, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { cn } from '@/shared/libs/cn';
 import useDebounceValue from '@/shared/libs/use-debounce-value';
@@ -23,6 +24,8 @@ export const SearchUsersInput: FC<SearchUsersProps> = memo(
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const [isFocusInput, setIsFocusInput] = useState(false);
 
+    const [_, setUrlSearchParams] = useSearchParams();
+
     const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
       useGetSearchingUsers(debouncesLogin);
 
@@ -35,7 +38,6 @@ export const SearchUsersInput: FC<SearchUsersProps> = memo(
       ? !data.pages[0].items.length && Boolean(searchValue)
       : true;
 
-    console.log('input rendered');
     function onChangeInput(event: React.ChangeEvent<HTMLInputElement>) {
       if (!isOpenPopup) {
         setIsOpenPopup(true);
@@ -57,6 +59,7 @@ export const SearchUsersInput: FC<SearchUsersProps> = memo(
       setIsOpenPopup(false);
       setIsFocusInput(false);
       setLogin(value);
+      setUrlSearchParams({ login: value });
       setSearchValue('');
     }
 

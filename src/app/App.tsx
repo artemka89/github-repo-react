@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { SearchUsersInput } from '@/modules/search-users';
 import { UserCard } from '@/modules/user-card';
@@ -6,6 +7,15 @@ import { UserRepoList } from '@/modules/user-repos';
 
 export const App = () => {
   const [userLogin, setUserLogin] = useState<string>('');
+
+  const [urlSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const loginSearchParams = urlSearchParams.get('login');
+    if (loginSearchParams) {
+      setUserLogin(loginSearchParams);
+    }
+  }, [urlSearchParams]);
 
   return (
     <div className='container min-h-screen'>
