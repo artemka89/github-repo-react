@@ -1,9 +1,9 @@
 import { FC, memo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { cn } from '@/shared/libs/cn';
-import useDebounceValue from '@/shared/libs/use-debounce-value';
-import { useOutsideClick } from '@/shared/libs/use-outside-click';
+import { cn } from '@/shared/lib/cn';
+import useDebounceValue from '@/shared/lib/use-debounce-value';
+import { useOutsideClick } from '@/shared/lib/use-outside-click';
 import { Input } from '@/shared/ui/inputFirst';
 
 import { Popup } from './components/popup';

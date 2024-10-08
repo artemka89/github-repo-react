@@ -1,8 +1,8 @@
 import { FC, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { cn } from '@/shared/libs/cn';
-import { useAppearanceDelay } from '@/shared/libs/use-appearance-delay';
+import { cn } from '@/shared/lib/cn';
+import { useAppearanceDelay } from '@/shared/lib/use-appearance-delay';
 import { Spinner } from '@/shared/ui/spinner';
 
 interface UserListProps {

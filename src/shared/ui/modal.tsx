@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
-import { cn } from '../libs/cn';
+import { cn } from '../lib/cn';
 
 import { Button } from './button';
 

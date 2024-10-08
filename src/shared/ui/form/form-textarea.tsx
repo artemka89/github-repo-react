@@ -1,7 +1,7 @@
 import { FC, useId } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { cn } from '@/shared/libs/cn';
+import { cn } from '@/shared/lib/cn';
 import { Label } from '@/shared/ui/label';
 import { Textarea } from '@/shared/ui/textarea';
 

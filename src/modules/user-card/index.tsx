@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { cn } from '@/shared/libs/cn';
-import { useAppearanceDelay } from '@/shared/libs/use-appearance-delay';
+import { cn } from '@/shared/lib/cn';
+import { useAppearanceDelay } from '@/shared/lib/use-appearance-delay';
 
 import { CardHeader } from './components/card-header';
 import { RepoInfo } from './components/repo-info';

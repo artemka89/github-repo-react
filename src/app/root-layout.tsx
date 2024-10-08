@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/lib/cn';
 
 export const RootLayout: FC = () => {
   return (

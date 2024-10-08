@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { Check, CheckCheck, Trash2 } from 'lucide-react';
 
 import { TodoItemType } from '@/modules/todo-list/model/types';
-import { cn } from '@/shared/libs/cn';
-import { getLocaleDate } from '@/shared/libs/get-locale-date';
+import { cn } from '@/shared/lib/cn';
+import { getLocaleDate } from '@/shared/lib/get-locale-date';
 import {
   AccordionContent,
   AccordionItem,

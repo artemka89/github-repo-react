@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { cn } from '@/shared/libs/cn';
+import { cn } from '@/shared/lib/cn';
 
 interface RepoInfoProps {
   reposInfo: { public_repos: number; followers: number; following: number };

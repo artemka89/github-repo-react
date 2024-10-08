@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { cn } from '@/shared/libs/cn';
-import { getDisplayName } from '@/shared/libs/get-display-name';
+import { cn } from '@/shared/lib/cn';
+import { getDisplayName } from '@/shared/lib/get-display-name';
 import { Avatar } from '@/shared/ui/avatar';
 
 import { User } from '../model/types';

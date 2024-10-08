@@ -55,7 +55,7 @@ export const AddItemForm: FC<AddItemFormProps> = ({ onSubmit }) => {
           />
           <div className='flex justify-center'>
             <Button type='submit' variant={'outline'}>
-              Add Item
+              Add
             </Button>
           </div>
         </form>
