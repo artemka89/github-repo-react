@@ -1,13 +1,26 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
-import { App } from './App';
+import { GithubReposPage } from '@/pages/github-repos-page';
+
+import { RootLayout } from './root-layout';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate to='/users' replace={true} />,
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Navigate to='/users' /> },
+      { path: '/users', element: <GithubReposPage /> },
+      {
+        path: '/todo',
+        lazy: async () => {
+          const { TodoListPage } = await import('@/pages/todo-list-page');
+          return { element: <TodoListPage /> };
+        },
+      },
+    ],
   },
-  { path: '/users', element: <App /> },
+
   {
     path: '*',
     element: <div>Not found</div>,

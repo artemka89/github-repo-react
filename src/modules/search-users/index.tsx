@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { cn } from '@/shared/libs/cn';
 import useDebounceValue from '@/shared/libs/use-debounce-value';
 import { useOutsideClick } from '@/shared/libs/use-outside-click';
-import { Input } from '@/shared/ui/input';
+import { Input } from '@/shared/ui/inputFirst';
 
 import { Popup } from './components/popup';
 import { ScrollableUserList } from './components/scrollable-user-list';
@@ -24,7 +24,7 @@ export const SearchUsersInput: FC<SearchUsersProps> = memo(
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const [isFocusInput, setIsFocusInput] = useState(false);
 
-    const [_, setUrlSearchParams] = useSearchParams();
+    const setUrlSearchParams = useSearchParams()[1];
 
     const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
       useGetSearchingUsers(debouncesLogin);
