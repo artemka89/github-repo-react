@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { cn } from '@/shared/lib/cn';
-import { getDisplayName } from '@/shared/lib/get-display-name';
+import { getDisplayName } from '@/shared/lib/get-display-name/get-display-name';
 import { Avatar } from '@/shared/ui/avatar';
 
 interface CardHeaderProps {

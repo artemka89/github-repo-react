@@ -6,9 +6,9 @@ import useDebounceValue from '@/shared/lib/use-debounce-value';
 import { useOutsideClick } from '@/shared/lib/use-outside-click';
 import { Input } from '@/shared/ui/inputFirst';
 
-import { Popup } from './components/popup';
-import { ScrollableUserList } from './components/scrollable-user-list';
-import { UserItem } from './components/user-item';
+import { Popup } from './components/popup/popup';
+import { ScrollableUserList } from './components/scrollable-user-list/scrollable-user-list';
+import { UserItem } from './components/user-item/user-item';
 import { useGetSearchingUsers } from './model/use-get-searching-users';
 
 interface SearchUsersProps {
@@ -70,7 +70,10 @@ export const SearchUsersInput: FC<SearchUsersProps> = memo(
     return (
       <>
         {isFocusInput && (
-          <div className='fixed bottom-0 left-0 right-0 top-0 bg-black/50' />
+          <div
+            data-testid='fade screen'
+            className='fixed bottom-0 left-0 right-0 top-0 bg-black/50'
+          />
         )}
         <div ref={ref} className={cn(className, 'z-50` relative')}>
           <Input

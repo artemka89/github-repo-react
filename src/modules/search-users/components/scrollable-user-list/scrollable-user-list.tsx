@@ -7,11 +7,11 @@ import { Spinner } from '@/shared/ui/spinner';
 
 interface UserListProps {
   isScrollable?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
-  isLoading: boolean;
-  isInfinity: boolean;
-  isEmpty: boolean;
+  isLoading?: boolean;
+  isInfinity?: boolean;
+  isEmpty?: boolean;
   onScrollToBottom: () => void;
 }
 
@@ -19,9 +19,9 @@ export const ScrollableUserList: FC<UserListProps> = ({
   isScrollable = false,
   children,
   className,
-  isLoading,
-  isInfinity,
-  isEmpty,
+  isLoading = false,
+  isInfinity = false,
+  isEmpty = true,
   onScrollToBottom,
 }) => {
   const { ref, inView } = useInView({ root: null, threshold: 0 });
