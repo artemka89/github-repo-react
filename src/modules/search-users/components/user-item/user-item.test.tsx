@@ -11,7 +11,7 @@ describe('user-item', () => {
   };
 
   const onCLick = jest.fn();
-
+  
   test('render correctly ', () => {
     render(<UserItem user={user} onClick={onCLick} />);
 

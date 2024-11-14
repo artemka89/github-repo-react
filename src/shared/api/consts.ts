@@ -1,4 +1,4 @@
-const API_URL = 'https://api.github.com';
+const API_URL = '/api';
 export const USER_PER_PAGE = 20;
 
 export const getUserUrl = (login: string) => {
