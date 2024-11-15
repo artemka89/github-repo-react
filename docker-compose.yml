@@ -1,11 +1,14 @@
-version: '3.8'
-
 services:
   frontend:
     build: .
+    container_name: github-repo
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./images:/data/images
+      - images:/usr/share/nginx/html/images/
+    command: nginx -g 'daemon off;'
     ports:
       - 80:80
     restart: unless-stopped
+
+volumes:
+  images: null

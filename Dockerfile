@@ -12,6 +12,5 @@ RUN npm run build
 
 FROM nginx:1.27.2-alpine
 
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=builder /app/dist /usr/share/nginx/html/
+#COPY --from=builder /app/images/ /usr/share/nginx/html/images/
